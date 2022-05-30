@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Герои страны</title>
+    <meta name="keywords" content="Герои, Россия">
+    <style>
+      body {
+        background: gray;
+        text-align: center; 
+      } 
+      
+      a {
+        font-size: xx-large; 
+      }
+    </style>
+    <script>
+      var isRun = true;
+      var timerValue = 2000;
+      
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max); 
+      }
+      
+      function getNewUrl() {
+        console.log("getUrl");
+        let num = getRandomInt(32455);
+        //let num = Math.random(32455);
+        let part = "https://warheroes.ru/hero/hero.asp?Hero_id="
+        let url = part + num;
+        console.log("url = " + url);
+        return url;
+      }
+      
+      function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      
+    async function myslider(){
+        console.log('myslider');
+        if(isRun){
+            while (true){
+                if(isRun){
+                    await sleep(timerValue);
+                    console.log(getNewUrl());
+                    address.setAttribute("href", getNewUrl());
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+      
+    </script>
+  </head>
+  <body>
+    <a id="address" target="_blank" href="https://warheroes.ru/">
+      <img src="https://azbyka.ru/days/storage/images/icons-of-our-lady/76/p1as75dtlhoto1icaeau13qqaj4.png" alt="Августовская">
+    </a>
+  </body>
+  <script>
+    window.onload = function () {
+      address.setAttribute("href", getNewUrl());
+      myslider();
+    }
+  </script>
+</html>
