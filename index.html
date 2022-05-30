@@ -45,7 +45,7 @@
             while (true){
                 if(isRun){
                     await sleep(timerValue);
-                    console.log(getNewUrl());
+                    //console.log(getNewUrl());
                     address.setAttribute("href", getNewUrl());
                 }else{
                     break;
@@ -63,7 +63,6 @@
   </body>
   <script>
     window.onload = function () {
-      address.setAttribute("href", getNewUrl());
       myslider();
     }
   </script>
